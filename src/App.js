@@ -1,5 +1,7 @@
 class App {
-  play() {}
+  play() {
+    new BaseballGameController();
+  }
 }
 
 module.exports = App;
