@@ -28,6 +28,10 @@ class BaseballGame {
     });
     return [ball, strike];
   }
+
+  resetGame() {
+    this.setNewAnswer();
+  }
 }
 
 module.exports = BaseballGame;
