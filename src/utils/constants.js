@@ -17,4 +17,9 @@ const RESULT = {
   STRIKE: '스트라이크'
 };
 
-module.exports = { NUMBER, MESSAGE, RESULT };
+const KEY = {
+  RESTART: '1',
+  QUIT: '2'
+};
+
+module.exports = { NUMBER, MESSAGE, RESULT, KEY };
