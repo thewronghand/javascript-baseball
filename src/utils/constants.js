@@ -16,7 +16,7 @@ const MESSAGE = {
 const RESULT = {
   BALL: '볼 ',
   STRIKE: '스트라이크',
-  NOTHING: '낫싱'
+  NO_MATCH: '낫싱'
 };
 
 const KEY = {
