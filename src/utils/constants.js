@@ -1,7 +1,8 @@
 const NUMBER = {
   MIN: 1,
   MAX: 9,
-  VALID_LENGTH: 3
+  VALID_LENGTH: 3,
+  STRIKE_OUT: 3
 };
 
 const MESSAGE = {
