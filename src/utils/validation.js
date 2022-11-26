@@ -2,17 +2,17 @@ const { NUMBER, KEY, ERROR } = require('./constants');
 
 const Validate = {
   inputNumbers(numbers) {
-    if (numbers.length !== NUMBER.VALID_LENGTH) {
-      throw new Error(ERROR.USER_INPUT_NUMBERS_INVALID);
+    if (numbers.length !== NUMBER.validLength) {
+      throw new Error(ERROR.userInputNumbersInvalid);
     }
     if (!isValidInteger(numbers) || hasDuplicateNumber(numbers)) {
-      throw new Error(ERROR.USER_INPUT_NUMBERS_INVALID);
+      throw new Error(ERROR.userInputNumbersInvalid);
     }
   },
 
   inputCommand(command) {
     if (!isValidCommand(command)) {
-      throw new Error(ERROR.USER_INPUT_COMMAND_INVALID);
+      throw new Error(ERROR.userInputCommandInvalid);
     }
   }
 };
@@ -23,7 +23,7 @@ const isValidInteger = (input) => {
   if (parseFloat(input) !== parseInt(input)) {
     return false;
   }
-  if (parseInt(input) < NUMBER.MIN) {
+  if (parseInt(input) < NUMBER.min) {
     return false;
   }
   return true;
@@ -32,7 +32,7 @@ const isValidInteger = (input) => {
 const hasDuplicateNumber = (input) => input.length !== new Set(input).size;
 
 const isValidCommand = (input) => {
-  if (input !== KEY.RESTART && input !== KEY.QUIT) {
+  if (input !== KEY.restart && input !== KEY.quit) {
     return false;
   }
   return true;

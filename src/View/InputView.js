@@ -3,13 +3,13 @@ const { MESSAGE } = require('../utils/constants');
 
 const InputView = {
   readUserInputNumbers(callback) {
-    MissionUtils.Console.readLine(MESSAGE.READ_USER_INPUT_NUMBER, (input) => {
+    MissionUtils.Console.readLine(MESSAGE.readUserInputNumbers, (input) => {
       callback(input);
     });
   },
 
   readUserInputCommand(callback) {
-    MissionUtils.Console.readLine(MESSAGE.READ_USER_INPUT_COMMAND, (input) => {
+    MissionUtils.Console.readLine(MESSAGE.readUserInputCommand, (input) => {
       callback(input);
     });
   }

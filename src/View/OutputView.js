@@ -3,12 +3,12 @@ const MissionUtils = require('@woowacourse/mission-utils');
 
 const OutputView = {
   printStart() {
-    MissionUtils.Console.print(MESSAGE.GAME_START);
+    MissionUtils.Console.print(MESSAGE.gameStart);
   },
 
   printMatchResult(matchResult) {
     const [ball, strike] = matchResult;
-    if (strike === NUMBER.STRIKE_OUT) {
+    if (strike === NUMBER.strikeOutCount) {
       this.printGameWin(matchResult);
       return;
     }
@@ -21,7 +21,7 @@ const OutputView = {
   },
 
   getResultString(result) {
-    const text = [RESULT.BALL, RESULT.STRIKE];
+    const text = [RESULT.ball, RESULT.strike];
     const parsedResult = result.map((element, idx) => {
       if (element === 0) {
         return;
@@ -33,15 +33,11 @@ const OutputView = {
 
   printGameWin(matchResult) {
     const strikeText = this.getResultString(matchResult);
-    MissionUtils.Console.print(`${strikeText}` + `\n` + MESSAGE.GAME_FINISH);
+    MissionUtils.Console.print(`${strikeText}` + `\n` + MESSAGE.gameFinish);
   },
 
   printNoMatch() {
-    MissionUtils.Console.print(RESULT.NO_MATCH);
-  },
-
-  printError(error) {
-    MissionUtils.Console.print(error);
+    MissionUtils.Console.print(RESULT.noMatch);
   }
 };
 

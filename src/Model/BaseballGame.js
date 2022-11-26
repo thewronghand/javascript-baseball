@@ -8,9 +8,9 @@ class BaseballGame {
 
   setNewAnswer() {
     this.#answer = BaseballGameAnswerGenerator.generate(
-      NUMBER.MIN,
-      NUMBER.MAX,
-      NUMBER.VALID_LENGTH
+      NUMBER.min,
+      NUMBER.max,
+      NUMBER.validLength
     );
   }
 
