@@ -6,41 +6,34 @@ const OutputView = {
     MissionUtils.Console.print(MESSAGE.GAME_START);
   },
 
-  printMatchResult(ball, strike) {
+  printMatchResult(matchResult) {
+    const [ball, strike] = matchResult;
+    if (strike === NUMBER.STRIKE_OUT) {
+      this.printGameWin(matchResult);
+      return;
+    }
     if (ball === 0 && strike === 0) {
       this.printNoMatch();
       return;
     }
-    if (ball !== 0 && strike === 0) {
-      this.printBall(ball);
-      return;
-    }
-    if (ball === 0 && strike !== 0) {
-      this.printStrike(strike);
-      return;
-    }
-    this.printBallStrike(ball, strike);
-    if (strike === NUMBER.STRIKE_OUT) {
-      this.printGameWin();
-    }
+    const resultText = this.getResultString(matchResult);
+    MissionUtils.Console.print(resultText);
   },
 
-  printBallStrike(ball, strike) {
-    MissionUtils.Console.print(
-      `${ball}` + RESULT.BALL + `${strike}` + RESULT.STRIKE
-    );
+  getResultString(result) {
+    const text = [RESULT.BALL, RESULT.STRIKE];
+    const parsedResult = result.map((element, idx) => {
+      if (element === 0) {
+        return;
+      }
+      return String(element) + text[idx];
+    });
+    return parsedResult.filter((result) => result).join(' ');
   },
 
-  printBall(ball) {
-    MissionUtils.Console.print(`${ball}` + RESULT.BALL);
-  },
-
-  printStrike(strike) {
-    MissionUtils.Console.print(`${strike}` + RESULT.STRIKE);
-  },
-
-  printGameWin() {
-    MissionUtils.Console.print(MESSAGE.GAME_FINISH);
+  printGameWin(matchResult) {
+    const strikeText = this.getResultString(matchResult);
+    MissionUtils.Console.print(`${strikeText}` + `\n` + MESSAGE.GAME_FINISH);
   },
 
   printNoMatch() {
