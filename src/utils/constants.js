@@ -14,7 +14,7 @@ const MESSAGE = {
 };
 
 const RESULT = {
-  BALL: '볼 ',
+  BALL: '볼',
   STRIKE: '스트라이크',
   NO_MATCH: '낫싱'
 };
