@@ -1,18 +1,18 @@
-const { NUMBER, KEY } = require('./constants');
+const { NUMBER, KEY, ERROR } = require('./constants');
 
 const Validate = {
   inputNumbers(numbers) {
     if (numbers.length !== NUMBER.VALID_LENGTH) {
-      throw new Error();
+      throw new Error(ERROR.USER_INPUT_NUMBERS_INVALID);
     }
     if (!isValidInteger(numbers) || hasDuplicateNumber(numbers)) {
-      throw new Error();
+      throw new Error(ERROR.USER_INPUT_NUMBERS_INVALID);
     }
   },
 
   inputCommand(command) {
     if (!isValidCommand(command)) {
-      throw new Error();
+      throw new Error(ERROR.USER_INPUT_COMMAND_INVALID);
     }
   }
 };
