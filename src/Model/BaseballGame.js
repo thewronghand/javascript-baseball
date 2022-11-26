@@ -1,6 +1,7 @@
 const {
   BaseballGameAnswerGenerator
 } = require('../utils/baseballGameNumberGenerator');
+const { NUMBER } = require('../utils/constants');
 
 class BaseballGame {
   #answer;
